@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<script language="javascript" src="js/global.js"></script>
+		<link rel="stylesheet" href="css/films.css" type="text/css" />
+	</head>
+	<body>
+		<h2>Gestion des films</h2><br><br>
+		<input type="button" value="Enregistrer(C)" onClick="rendreVisible('divEnreg');">
+		<input type="button" value="Lister(R)" onClick="lister();">
+		<input type="button" value="Modifier(U)" onClick="rendreVisible('divFiche');">
+		<input type="button" value="Enlever(D)" onClick="rendreVisible('divEnlever');">
+		<div id="divEnreg">
+			<form id="formEnreg" enctype="multipart/form-data" action="serveur/enregistrer.php" method="POST" onSubmit="return valider();">
+				<h3>Enregistrer film</h3><br><br>
+				<span onClick="rendreInvisible('divEnreg')">X</span><br>
+				Titre:<input type="text" id="titre" name="titre"><br>
+				Duree:<input type="text" id="duree" name="duree"><br>
+				Realisateur:<input type="text" id="res" name="res"><br><br>
+				Pochette:<input type="file" id="pochette" name="pochette"><br><br>
+				<input type="submit" value="Envoyer"><br>
+				<!--<input type="button" value="Envoyer" onClick="valider();"><br>-->
+			</form>
+		</div>
+		<form id="formLister" action="serveur/lister.php" method="POST">
+		</form>
+		<div id="divEnlever">
+			<form id="formEnlever" action="serveur/enlever.php" method="POST" onSubmit="return validerNum('numE');">
+				<h3>Enlever film</h3><br><br>
+				<span onClick="rendreInvisible('divEnlever')">X</span><br>
+				Numero:<input type="text" id="numE" name="num"><br>
+				<input type="submit" value="Envoyer"><br>
+			</form>
+		</div>
+		<div id="divFiche">
+			<form id="formFiche" action="serveur/fiche.php" method="POST" onSubmit="return validerNum('numF');">
+				<h3>Obtenir fiche film</h3><br><br>
+				<span onClick="rendreInvisible('divFiche')">X</span><br>
+				Numero:<input type="text" id="numF" name="num"><br>
+				<input type="submit" value="Envoyer"><br>
+			</form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!-- Pour VSC https://edutechwiki.unige.ch/fr/Visual_studio_code#Cr.C3.A9er_un_squelette_de_document_HTML-->
+<html>
+    <head>
+        <script>
+            localStorage.setItem("panier",'[]');//panier vide
+            var panier=null;
+            function ajoutPanier() {
+                var idf = document.querySelector("#idf").value;
+                panier=JSON.parse(localStorage.getItem("panier"));
+                panier.push(idf);
+                localStorage.setItem("panier",JSON.stringify(panier));
+            }
+
+            function afficherPanier() {
+                var lePanier="<h3>Contenu de votre panier</h3></br>";
+                panier=JSON.parse(localStorage.getItem("panier"));
+                for( var elem of panier){
+                    lePanier+="</br>Élément = "+elem;
+                }
+                document.querySelector("#votrePanier").innerHTML=lePanier;
+            }
+        </script>
+    </head>
+    <body>
+        <input type="number" id="idf"></br></br>
+        <button onClick="ajoutPanier()">Ajouter au panier</button></br>
+        <button onClick="afficherPanier()">Afficher le panier</button></body>
+        <span id="votrePanier"></span>
+    </body>
+</html>

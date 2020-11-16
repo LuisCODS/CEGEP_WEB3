@@ -1,0 +1,38 @@
+<head>
+	<script src="js/monJS.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/monCSS.css"/>	
+</head>
+</head>
+<body>
+<h2>CRUD avec fichier en PHP</h2><br><br>
+<input type="button" value="Enregistrer(C)" onClick="montrer('idForm')">
+<input type="button" value="Lister(R)" onClick="envoyerLister()">
+<input type="button" value="Modifier(U)" onClick="montrer('idModifier')">
+<input type="button" value="Enlever(D)" onClick="montrer('idEnlever')">
+<FORM ID="idForm" ACTION="serveur/enregistrer.php" ENCTYPE="multipart/form-data" METHOD="POST" onSubmit="return validerEnreg(this);">
+ <span onClick="cacher('idForm')">X</span><br><br>
+ <h1>Enregistrer membre</h1>
+ Numero : <input type="text" id="num" name="num"><br><br>
+ Nom : <input type="text" id="nom" name="nom"><br><br>
+ Age : <input type="text" id="age" name="age"><br><br>
+ Sexe : <input type="text" id="sexe" name="sexe"><br><br>
+ Photo : <input type="file" name="photo"><br><br>
+ <input type="submit" value="Envoyer"><br><br>
+</FORM>
+<FORM ID="idLister" ACTION="serveur/lister.php" METHOD="POST">
+</FORM>
+<FORM ID="idEnlever" ACTION="serveur/enlever.php" METHOD="POST">
+ <span onClick="cacher('idEnlever')">X</span><br><br>
+ <h1>Enlever membre</h1>
+ Numero : <input type="text" id="numE" name="numE"><br><br>
+ <input type="submit" value="Envoyer"><br><br>
+</FORM>
+
+<FORM ID="idModifier" ACTION="serveur/fiche.php" METHOD="POST">
+ <span onClick="cacher('idModifier')">X</span><br><br>
+ <h1>Fiche du membre</h1>
+ Numero : <input type="text" id="numF" name="numF"><br><br>
+ <input type="submit" value="Envoyer"><br><br>
+</FORM>
+
+

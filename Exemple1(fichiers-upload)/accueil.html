@@ -1,0 +1,21 @@
+<head>
+	<script src="js/monJS.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/monCSS.css"/>	
+</head>
+</head>
+<body>
+<input type="button" value="Enregistrer" onClick="montrer('idForm')">
+<input type="button" value="Lister" onClick="envoyerLister()">
+<FORM ID="idForm" ACTION="serveur/enregistrer.php" ENCTYPE="multipart/form-data" METHOD="POST" onSubmit="return validerEnreg(this);">
+ <span onClick="cacher('idForm')">X</span><br><br>
+ <h1>Enregistrer membre</h1>
+ Nom : <input type="text" id="nom" name="nom"><br><br>
+ Age : <input type="text" id="age" name="age"><br><br>
+ Sexe : <input type="text" id="sexe" name="sexe"><br><br>
+ Photo : <input type="file" name="photo"><br><br>
+ <input type="submit" value="Envoyer"><br><br>
+</FORM>
+<FORM ID="idLister" ACTION="serveur/lister.php" METHOD="POST">
+</FORM>
+
+
